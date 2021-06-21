@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#test {
+  top: 100px;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  position: relative;
+  border: 5px solid black
+}
+
+body {
+height: 2000px;
+
+
+}
+</style>
+</head>
+<body>
+
+<div id="test">
+  <p>Click the button to get offsetTop for the test div.</p>
+ 
+  <p>offsetTop is: <span id="info"></span></p>
+</div>
+
+<script>
+
+    
+function myFunction() {
+ let test = document.querySelector("test");
+ 
+ let info = document.querySelector("info").addEventListener('scroll', myFunction);
+ info.innerHTML = test.offsetTop; 
+
+ console.log(info,test);
+ myFunction();
+}
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+      "use strict";
+      document.querySelector("body").addEventListener("scroll", meineFunk);
+      let meineFunk = () => {
+        let hoehe = window.innerHeight;
+        let fromTop = document.document.fromTop;
+
+        console.log(fromTop, hoehe);
+
+        if (fromTop > 100) {
+          document.body.style.backgroundColor = "yellow";
+        }
+        if (fromTop > 300) {
+          document.body.style.backgroundColor = "lime";
+        }
+        if (hoehe > 500) {
+          document.body.style.backgroundColor = "red";
+        }
+        if (hoehe > 800) {
+          document.body.style.backgroundColor = "darkred";
+        }
+        if (hoehe > 1000) {
+          document.body.style.backgroundColor = "magenta";
+        }
+        if (hoehe > 1300) {
+          document.body.style.backgroundColor = "green";
+        }
+        if (hoehe > 1600) {
+          document.body.style.backgroundColor = "blue";
+        }
+        if (hoehe > 1800) {
+          document.body.style.backgroundColor = "violett";
+        }
+
+        document.getElementById("drehMich").style.transform =
+          "rotate(" + fromTop + "deg)";
+      };
+    </script>
+
+    <style>
+      body {
+        transition: all 2s;
+        height: 2000px;
+      }
+      #drehMich {
+        transform: rotate(45deg);
+        position: absolute;
+        left: 230px;
+        top: 230px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="drehMich">OMG!</h1>
+  </body>
+</html>
