@@ -9,40 +9,45 @@
 
     <script>
       "use strict";
-      document.querySelector("body").addEventListener("scroll", meineFunk);
+      
       let meineFunk = () => {
         let hoehe = window.innerHeight;
         let fromTop = document.document.fromTop;
 
         console.log(fromTop, hoehe);
 
-        if (fromTop > 100) {
+        if (fromTop > 100, hoehe > 100 ) {
           document.body.style.backgroundColor = "yellow";
         }
         if (fromTop > 300) {
           document.body.style.backgroundColor = "lime";
         }
-        if (hoehe > 500) {
+        if (fromTop > 500) {
           document.body.style.backgroundColor = "red";
         }
-        if (hoehe > 800) {
+        if (fromTop > 800) {
           document.body.style.backgroundColor = "darkred";
         }
-        if (hoehe > 1000) {
+        if (fromTop > 1000) {
           document.body.style.backgroundColor = "magenta";
         }
-        if (hoehe > 1300) {
+        if (fromTop > 1300) {
           document.body.style.backgroundColor = "green";
         }
-        if (hoehe > 1600) {
+        if (fromTop > 1600) {
           document.body.style.backgroundColor = "blue";
         }
-        if (hoehe > 1800) {
+        if (fromTop > 1800) {
           document.body.style.backgroundColor = "violett";
         }
 
-        document.getElementById("drehMich").style.transform =
-          "rotate(" + fromTop + "deg)";
+        let dreh = document.querySelector("#drehMich").addEventListener('scroll');
+        dreh.style.transform = "rotate(" + fromTop + "deg)";
+
+          document.querySelector("body").addEventListener("scroll", meineFunk);
+
+      meineFunk();
+
       };
     </script>
 
