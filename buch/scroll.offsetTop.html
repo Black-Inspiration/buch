@@ -3,7 +3,7 @@
 <head>
 <style>
 #test {
-  top: 100px;
+ 
   margin: 10px;
   padding: 10px;
   width: 300px;
@@ -20,26 +20,36 @@ height: 2000px;
 </head>
 <body>
 
+  <div id="test0">
+    <p>Click the button to get offsetTop for the test div.</p>
+   
+    <p>offsetTop is: <span id="info0"></span></p>
+  </div>
+
 <div id="test">
   <p>Click the button to get offsetTop for the test div.</p>
  
   <p>offsetTop is: <span id="info"></span></p>
 </div>
 
+
 <script>
 
     
-function myFunction() {
- let test = document.querySelector("test");
+function myFunction(event) {
+ let test = document.querySelector("#test");
  
- let info = document.querySelector("info").addEventListener('scroll', myFunction);
+ let info = document.querySelector("#info");
+ 
  info.innerHTML = test.offsetTop; 
+ 
+console.log(document.documentElement.scrollTop - test.offsetTop);
 
- console.log(info,test);
- myFunction();
+ 
+ 
 }
 
-
+window.addEventListener('scroll', myFunction);
 
 </script>
 

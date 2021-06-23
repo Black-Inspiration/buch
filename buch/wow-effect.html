@@ -10,45 +10,53 @@
     <script>
       "use strict";
       
-      let meineFunk = () => {
-        let hoehe = window.innerHeight;
-        let fromTop = document.document.fromTop;
+       let elem = document.querySelector('#drehMich');
+      let scroll = elem.scrollTop;
+     
+      
 
-        console.log(fromTop, hoehe);
+       console.log(elem.scrollTop);
+        console.log(window.innerHeight);
+        
+ 
 
-        if (fromTop > 100, hoehe > 100 ) {
+        let meineFunk = () => {
+        if (scroll > 100) {
           document.body.style.backgroundColor = "yellow";
         }
-        if (fromTop > 300) {
+        if (scroll > 300, hoehe > 100 ) {
           document.body.style.backgroundColor = "lime";
         }
-        if (fromTop > 500) {
+        if (scroll > 500) {
           document.body.style.backgroundColor = "red";
         }
-        if (fromTop > 800) {
+        if (scroll > 800) {
           document.body.style.backgroundColor = "darkred";
         }
-        if (fromTop > 1000) {
-          document.body.style.backgroundColor = "magenta";
+       if (scroll > 1000) {
+         document.body.style.backgroundColor = "magenta";
         }
-        if (fromTop > 1300) {
+        if (scroll > 1300) {
           document.body.style.backgroundColor = "green";
         }
-        if (fromTop > 1600) {
+        if (scroll > 1600) {
           document.body.style.backgroundColor = "blue";
         }
-        if (fromTop > 1800) {
+        if (scroll > 1800) {
           document.body.style.backgroundColor = "violett";
         }
+        else {black;}
 
-        let dreh = document.querySelector("#drehMich").addEventListener('scroll');
-        dreh.style.transform = "rotate(" + fromTop + "deg)";
-
-          document.querySelector("body").addEventListener("scroll", meineFunk);
-
-      meineFunk();
-
+       document.addEventListener('scroll', meineFunk);
+       
+       
+       let dreh = dreh.style.transform = "rotate(" + elem + "deg)";
+       window.addEventListener('scroll', dreh);
+       
+      
       };
+
+  
     </script>
 
     <style>
@@ -60,7 +68,8 @@
         transform: rotate(45deg);
         position: absolute;
         left: 230px;
-        top: 230px;
+        top: 30px;
+        font-size: 200px;
       }
     </style>
   </head>

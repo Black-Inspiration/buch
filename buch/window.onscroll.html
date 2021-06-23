@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Resize</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
+
+  <script>
+    "use strict";
+
+document.addEventListener("DOMContentLoaded", evt => {
+
+
+
+    let drehMich = document.querySelectorAll('.drehMich');
+S
+    drehMich.forEach((el) => {S
+      el.style.opacity = 1
+    })
+
+    const objInView = (scrollOffset = 0) => {S
+      let scroll = drehMich.getBoundingClientRect().top;
+      return (
+        scroll <= ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll / 100))
+      );
+
+
+    };
+
+ 
+
+    console.log(drehMich);
+    console.log(objInView);
+
+    let meineFunktion = (event) => {
+      let scroll = document.documentElement.scrollTop; 
+      if (scroll > 200) { document.body.style.backgroundColor = "yellow" }
+      if (scroll > 600) {document.body.style.backgroundColor = "lime"}
+      if (scroll > 700) {document.body.style.backgroundColor = "red"}
+      if (scroll > 800) {document.body.style.backgroundColor = "darkred"}
+      if (scroll > 900) {document.body.style.backgroundColor = "magenta"}
+       if (scroll > 1000) {document.body.style.backgroundColor = "green"}
+       if (scroll > 1100) {document.body.style.backgroundColor = "blue"}
+
+      //     function dreh() {
+      //     var text = document.getElementById('myimage');
+      //     text.style.transform = 'rotate(180deg)';
+      // }
+    }
+
+   
+    let dreh = () => {
+    
+      drehMich.forEach((el) => {
+      let scrollTop = document.documentElement.scrollTop - el.offsetTop; 
+      el.style.opacity = Math.sin(scrollTop / 180 * Math.PI) + 1 / 2;
+      el.style.transform = `rotate(${scrollTop}deg)  scale(2)`;
+      el.style.backgroundColor =  'red';
+
+    })
+   }
+
+
+    window.addEventListener('scroll', meineFunktion);
+
+    window.addEventListener('scroll', dreh);
+
+  });
+
+  </script>
+
+  <style>
+
+
+    body {
+      transition: all 2s;
+      height: 2000px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .drehMich {
+      transform: rotate(45deg);
+      position: absolute;
+       /* width: 100px;
+      height: 100px;  */
+      left: 430px;
+      top: 230px;
+      color: white;
+      border: 2px solid red;
+      border-radius: 50%;
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="drehMich">OMG!</h1>
+  <h1 class="drehMich" style="left: 430px; top: 500px;">OMG!</h1>
+  <h1 class="drehMich" style="left: 430px; top: 800px;">OMG!</h1>
+  <h1 class="drehMich" style="left: 430px; top: 1000px;">OMG!</h1>
+  <h1 class="drehMich" style="left: 430px; top: 1200px;">OMG!</h1>
+  <h1 class="drehMich" style="left: 430px; top: 1400px;">OMG!</h1>
+  <h1 class="drehMich" style="left: 430px; top: 1800px;">OMG!</h1>
+</body>
+
+</html>
